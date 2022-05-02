@@ -12,5 +12,8 @@ Se describe a continuación ciertas recomendaciones.
  **Controlar turnos y la jugada
  **Mostrar los puntos del ganador
  **Uso de una herramienta colaborativa
+
+![img.png](img.png)
  
 ![image](https://user-images.githubusercontent.com/49157674/165867561-a59dbe9b-6389-4cfb-96a5-372015150d4e.png)
+
