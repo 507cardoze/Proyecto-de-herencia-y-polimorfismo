@@ -1,5 +1,4 @@
 package com.anthony;
-import java.io.IOException;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -24,9 +23,16 @@ public class Main {
 
 
     public static class MotorJuego implements motor {
-        protected int turno = 1;
-        protected boolean ejecutado = true;
-        protected int confirm = 0;
+        private int turno;
+        private boolean ejecutado;
+        private int confirm;
+
+        MotorJuego(){
+            turno = 1;
+            ejecutado = true;
+            confirm = 0;
+        }
+
         Random ranNum = new Random();
         public void incrementTurno() {
             turno = turno + 1;
@@ -40,32 +46,37 @@ public class Main {
         public boolean isEjecutado(){
             return ejecutado;
         }
-
         public void detenerEjecucion(){
             ejecutado = false;
         }
-
-
         public int getConfirm() {
             return confirm;
         }
-
         public void setConfirm(int a){
             confirm = a;
         }
     }
 
-    public static class Jugador implements jugadores {
-        protected int puntaje = 0;
-        protected String nombreJugador = "";
+    public static class Persona {
+        private String nombreJugador;
+        Persona(){
+            nombreJugador = "";
+        }
+        public void setNombre(String name) { nombreJugador = name;}
+        public String getNombre(){return nombreJugador;}
+    }
+
+    public static class Jugador extends Persona implements jugadores {
+        private int puntaje;
+        Jugador(){
+            puntaje = 0;
+        }
         public int getPuntaje() {
             return puntaje;
         }
         public void setPuntaje(int a) {
             puntaje =  puntaje + a;
         }
-        public void setNombre(String name) { nombreJugador = name;}
-        public String getNombre(){return nombreJugador;}
     }
 
     public static void main(String[] args) {
@@ -76,12 +87,12 @@ public class Main {
         int buffer;
 
         System.out.println("---- Juegos de azar ----");
-        while(!(player1.nombreJugador.length() > 0)){
+        while(!(player1.getNombre().length() > 0)){
             System.out.println("Ingrese el nombre del jugador 1: ");
             player1.setNombre(sc.nextLine());
         }
         System.out.println("---------------------------------------------------------------");
-        while(!(player2.nombreJugador.length() > 0)){
+        while(!(player2.getNombre().length() > 0)){
             System.out.println("Ingrese el nombre del jugador 2: ");
             player2.setNombre(sc.nextLine());
         }
