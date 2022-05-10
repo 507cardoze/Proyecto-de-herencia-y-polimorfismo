@@ -58,12 +58,9 @@ public class Main {
     }
 
     public static class Persona {
-        private String nombreJugador;
-        Persona(){
-            nombreJugador = "";
-        }
-        public void setNombre(String name) { nombreJugador = name;}
-        public String getNombre(){return nombreJugador;}
+        public String nombre = "";
+        public void setNombre() { nombre = "default_name";}
+        public String getNombre(){return nombre;}
     }
 
     public static class Jugador extends Persona implements jugadores {
@@ -76,6 +73,10 @@ public class Main {
         }
         public void setPuntaje(int a) {
             puntaje =  puntaje + a;
+        }
+
+        public void setNombre(String nombreJugador) {
+            nombre = nombreJugador;
         }
     }
 
