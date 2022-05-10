@@ -41,7 +41,7 @@ public class Main {
             return turno;
         }
         public int lanzarDados(){
-                return ranNum.nextInt(6) + 1;
+            return ranNum.nextInt(6) + 1 + ranNum.nextInt(6) + 1;
         }
         public boolean isEjecutado(){
             return ejecutado;
